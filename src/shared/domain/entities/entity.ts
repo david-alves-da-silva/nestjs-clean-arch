@@ -7,7 +7,7 @@ export abstract class Entity<Props = any> {
     this._id = id || uuidv4();
   }
   get id() {
-    return this.id;
+    return this._id;
   }
   toJSON(): Required<{ id: string } & Props> {
     return {
