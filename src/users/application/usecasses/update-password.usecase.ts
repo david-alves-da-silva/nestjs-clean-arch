@@ -1,7 +1,6 @@
 import { UserRepository } from '@/users/domain/repositories/user.repository'
 import { UserOutput, UserOutputMapper } from '../dtos/user-output'
 import { UseCase as DefaultUseCase } from '@/shared/application/usecases/use-case'
-import { BadRequestError } from '@/shared/application/errors/bad-request-errors'
 import { InvalidPasswordError } from '@/shared/application/errors/invalid-password-errors'
 import { HashProvider } from '@/shared/application/providers/hash-provider'
 export namespace UpdatePasswordUseCase {
