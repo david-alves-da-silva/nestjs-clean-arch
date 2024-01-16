@@ -5,6 +5,6 @@ export class ListUsersDto implements ListUsersUseCase.Input {
   page?: number
   perPage?: number
   sort?: string
-  sortDir?: SortDirection | null
+  sortDir?: SortDirection
   filter?: string
 }
