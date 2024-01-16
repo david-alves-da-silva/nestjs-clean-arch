@@ -25,20 +25,27 @@ import { ListUsersDto } from './dtos/list-users.dto'
 import { UpdatePasswordDto } from './dtos/update-password.dto'
 @Controller('users')
 export class UsersController {
-  @Inject(UpdateUserUseCase.UseCase)
-  private updateUserUseCase: UpdateUserUseCase.UseCase
-  @Inject(UpdatePasswordUseCase.UseCase)
-  private updatePasswordUseCase: UpdatePasswordUseCase.UseCase
-  @Inject(DeleteUserUseCase.UseCase)
-  private deleteUserUseCase: DeleteUserUseCase.UseCase
-  @Inject(GetUserUseCase.UseCase)
-  private getUserUseCase: GetUserUseCase.UseCase
-  @Inject(ListUsersUseCase.UseCase)
-  private listUsersUseCase: ListUsersUseCase.UseCase
-  @Inject(SignupUseCase.UseCase)
-  private signupUseCase: SignupUseCase.UseCase
   @Inject(SigninUseCase.UseCase)
   private signinUseCase: SigninUseCase.UseCase
+
+  @Inject(SignupUseCase.UseCase)
+  private signupUseCase: SignupUseCase.UseCase
+
+  @Inject(ListUsersUseCase.UseCase)
+  private listUsersUseCase: ListUsersUseCase.UseCase
+
+  @Inject(GetUserUseCase.UseCase)
+  private getUserUseCase: GetUserUseCase.UseCase
+
+  @Inject(UpdateUserUseCase.UseCase)
+  private updateUserUseCase: UpdateUserUseCase.UseCase
+
+  @Inject(UpdatePasswordUseCase.UseCase)
+  private updatePasswordUseCase: UpdatePasswordUseCase.UseCase
+
+  @Inject(DeleteUserUseCase.UseCase)
+  private deleteUserUseCase: DeleteUserUseCase.UseCase
+
   @Post()
   async create(@Body() signupDto: SignupDto) {
     return this.signupUseCase.execute(signupDto)
