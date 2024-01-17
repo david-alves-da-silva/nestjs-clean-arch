@@ -4,9 +4,10 @@ import { AppService } from './app.service'
 import { EnvConfigModule } from './shared/infrastructure/env-config/env-config.module'
 import { EnvConfiggitService } from './users/infrastructure/env-configgit/env-configgit.service'
 import { UsersModule } from './users/infrastructure/users.module'
+import { DatabaseModule } from './shared/infrastructure/database/database.module'
 
 @Module({
-  imports: [EnvConfigModule, UsersModule],
+  imports: [EnvConfigModule, UsersModule, DatabaseModule],
   controllers: [AppController],
   providers: [AppService, EnvConfiggitService],
 })
