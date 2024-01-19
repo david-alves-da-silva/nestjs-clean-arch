@@ -7,7 +7,7 @@ import { UserModelMapper } from '../models/user-model.mapper'
 export class UserPrismaRepository implements UserRepository.Repository {
   sortableFields: string[]
 
-  constructor(private prismaService: PrismaService) {}
+  constructor(private prismaService: PrismaService) { }
 
   findByEmail(email: string): Promise<UserEntity> {
     throw new Error('Method not implemented.')
@@ -20,8 +20,10 @@ export class UserPrismaRepository implements UserRepository.Repository {
   ): Promise<UserRepository.SearchResult> {
     throw new Error('Method not implemented.')
   }
-  insert(entity: UserEntity): Promise<void> {
-    throw new Error('Method not implemented.')
+  async insert(entity: UserEntity): Promise<void> {
+    await this.prismaService.user.create({
+      data: entity.toJSON(),
+    })
   }
   findById(id: string): Promise<UserEntity> {
     return this._get(id)
