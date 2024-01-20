@@ -25,7 +25,7 @@ describe('UserPrismaRepository integration tests', () => {
   })
   it('should throws error when entity not found', async () => {
     await expect(() => sut.findById('FakeId')).rejects.toThrow(
-      new NotFoundError('UserModel not found usind ID FakeId'),
+      new NotFoundError('UserModel not found using ID FakeId'),
     )
   })
   it('should finds a entity by id', async () => {
@@ -59,7 +59,7 @@ describe('UserPrismaRepository integration tests', () => {
   it('should throws error on update when entity not found', async () => {
     const entity = new UserEntity(UserDataBuilder({}))
     await expect(() => sut.update(entity)).rejects.toThrow(
-      new NotFoundError(`UserModel not found usind ID ${entity._id}`),
+      new NotFoundError(`UserModel not found using ID ${entity._id}`),
     )
   })
   it('should update a entity', async () => {
@@ -79,7 +79,7 @@ describe('UserPrismaRepository integration tests', () => {
   it('should throws error on delete when entity not found', async () => {
     const entity = new UserEntity(UserDataBuilder({}))
     await expect(() => sut.delete(entity._id)).rejects.toThrow(
-      new NotFoundError(`UserModel not found usind ID ${entity._id}`),
+      new NotFoundError(`UserModel not found using ID ${entity._id}`),
     )
   })
   it('should delete a entity', async () => {
@@ -97,7 +97,7 @@ describe('UserPrismaRepository integration tests', () => {
   })
   it('should throws error when entity not found', async () => {
     await expect(() => sut.findByEmail('a@a.com')).rejects.toThrow(
-      new NotFoundError(`UserModel not found usind email ${'a@a.com'}`),
+      new NotFoundError(`UserModel not found using email ${'a@a.com'}`),
     )
   })
   it('should finds a entity by email', async () => {
