@@ -13,7 +13,7 @@ import { instanceToPlain } from 'class-transformer'
 import { applyGlobalConfig } from '@/global-config'
 import { UserDataBuilder } from '@/users/domain/testing/helpers/user-data-builder'
 import { UserEntity } from '@/users/domain/entities/user.entity'
-describe('UsersController unit tests', () => {
+describe('UsersController e2e tests', () => {
   let app: INestApplication
   let module: TestingModule
   let repository: UserRepository.Repository
