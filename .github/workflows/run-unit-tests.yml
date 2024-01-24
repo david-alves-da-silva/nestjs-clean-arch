@@ -9,7 +9,7 @@ jobs:
       - uses: actions/checkout@v3 # baixar o codigo do app no ubuntu
       - uses: actions/setup-node@v3 # configurar o Nodejs
         with:
-          node-version: 18
+          node-version: 16
           cache: 'npm'
       - run: npm ci # instalar as dependencias sem interaçao
       - run: npm run test:unit
