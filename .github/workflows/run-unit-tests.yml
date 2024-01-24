@@ -6,8 +6,8 @@ jobs:
     runs-on: ubuntu-latest
     # definir os passos necessarios para baixar o app e rodar os testes
     steps:
-      - uses: actions/checkout@v4 # baixar o codigo do app no ubuntu
-      - uses: actions/setup-node@v4 # configurar o Nodejs
+      - uses: actions/checkout@v3 # baixar o codigo do app no ubuntu
+      - uses: actions/setup-node@v3 # configurar o Nodejs
         with:
           node-version: 18
           cache: 'npm'
