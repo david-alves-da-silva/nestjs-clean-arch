@@ -156,6 +156,15 @@ export class UsersController {
     const output = await this.listUsersUseCase.execute(searchParams)
     return UsersController.listUsersToResponse(output)
   }
+  @ApiBearerAuth()
+  @ApiResponse({
+    status: 404,
+    description: 'Id não encontrado',
+  })
+  @ApiResponse({
+    status: 401,
+    description: 'Acesso não autorizado',
+  })
   @UseGuards(AuthGuard)
   @Get(':id')
   async findOne(@Param('id') id: string) {
