@@ -12,8 +12,10 @@ import { UpdatePasswordUseCase } from '../application/usecasses/update-password.
 import { DeleteUserUseCase } from '../application/usecasses/delete-user.usecase'
 import { PrismaService } from '@/shared/infrastructure/database/prisma/prisma.service'
 import { UserPrismaRepository } from './database/prisma/repositories/user-prisma.repository'
+import { AuthModule } from '@/auth/infrastructure/auth.module'
 
 @Module({
+  imports: [AuthModule],
   controllers: [UsersController],
   providers: [
     {
